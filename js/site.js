@@ -64,4 +64,4 @@ function play(){clearInterval(t);if(!matchMedia('(prefers-reduced-motion: reduce
 d.forEach(function(b,k){b.addEventListener('click',function(){go(k);play();});});play();})();
 
 (function(){var sel=document.getElementById('item');if(!sel)return;var m=location.search.match(/item=([a-z-]+)/);if(m)sel.value=m[1];})();
-document.addEventListener('click',function(e){document.querySelectorAll('details.lang[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});
+document.addEventListener('click',function(e){document.querySelectorAll('details.lang[open],details.menu[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});
