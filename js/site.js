@@ -65,3 +65,6 @@ d.forEach(function(b,k){b.addEventListener('click',function(){go(k);play();});})
 
 (function(){var sel=document.getElementById('item');if(!sel)return;var m=location.search.match(/item=([a-z-]+)/);if(m)sel.value=m[1];})();
 document.addEventListener('click',function(e){document.querySelectorAll('details.lang[open],details.menu[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});
+
+// contatore visite e download (GoatCounter, senza cookie)
+(function(){var s=document.createElement('script');s.async=true;s.src='//gc.zgo.at/count.js';s.setAttribute('data-goatcounter','https://cozycornerprints.goatcounter.com/count');document.head.appendChild(s);var L=(document.documentElement.lang||'en').slice(0,2);function ev(n){var t=0;(function go(){if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path:n+'-'+L,title:n,event:true});}else if(t++<20){setTimeout(go,250);}})();}document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href$=".pdf"]');if(a){ev('download-'+a.getAttribute('href').split('/').pop().replace('.pdf',''));}if(e.target.closest&&e.target.closest('#save')){ev('save-colored-page');}});})();
